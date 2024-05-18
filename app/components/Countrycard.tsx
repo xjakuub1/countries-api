@@ -11,7 +11,8 @@ async function CountryCard(props: { name: string }) {
 			<Link
 				href={`/countries/${country.cca2.toLowerCase()}`}
 				className="flex flex-row items-center bg-white rounded-lg text-black shadow-lg hover:bg-neutral-200 p-4 gap-4 w-full min-w-[458.5px]"
-			>
+        passHref
+      >
 				<img
 					src={country.flags.png}
 					alt={props.name}
