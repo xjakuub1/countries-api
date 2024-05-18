@@ -1,4 +1,4 @@
-import { ShadSearch } from "./components/shadSearch";
+import { ShadSearch } from "./components/search";
 
 export default async function Home() {
 	const res = await fetch("https://restcountries.com/v3.1/all");
