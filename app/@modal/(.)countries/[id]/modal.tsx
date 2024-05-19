@@ -20,17 +20,17 @@ export function Modal({ children }: { children: React.ReactNode }) {
 	}
 
 	return createPortal(
-		<div className="absolute flex items-center justify-center top-0 left-0 right-0 bottom-0 opacity-25">
+		<div className="absolute flex items-center justify-center top-0 left-0 right-0 bottom-0">
 			<dialog
 				ref={dialogRef}
-				className="relative flex items-center justify-center w-4/5 max-w-[500px] h-auto max-h-[500px] rounded-md bg-white p-5"
+				className="fixed flex items-center justify-center overflow-hidden w-full max-w-[700px] h-auto max-h-[700px] rounded-lg bg-white p-5 shadow-2xl"
 				onClose={onDismiss}
 			>
 				{children}
 				<ImCross
 					onClick={onDismiss}
-					size={12}
-					className="flex items-center absolute top-2.5 right-2.5 border-sm cursor-pointer text-black hover:bg-neutral-100"
+					size={15}
+					className="flex items-center absolute top-4 right-4 cursor-pointer text-black"
 				/>
 			</dialog>
 		</div>,
