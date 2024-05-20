@@ -17,12 +17,12 @@ export default async function countryModal({
 	let borders = "";
 	let subregion = "";
 
-	const hasCurrencies = country && country.currencies && Object.keys(country.currencies).length > 0;
-    const hasCapital = country && country.capital && country.capital.length > 0;
-	const hasLanguages = country && country.languages && Object.keys(country.languages).length > 0;
-    const hasRegion = country && country.region && country.region !== "";
-	const hasSubregion = country && country.subregion && country.subregion !== "";
-    const hasBorders = country && country.borders && country.borders.length > 0;
+	const hasCurrencies = country.currencies && Object.keys(country.currencies).length > 0;
+    const hasCapital = country.capital && country.capital.length > 0;
+	const hasLanguages = country.languages && Object.keys(country.languages).length > 0;
+    const hasRegion = country.region && country.region !== "";
+	const hasSubregion = country.subregion && country.subregion !== "";
+    const hasBorders = country.borders && country.borders.length > 0;
 
 	if (country) {
 		if (hasCurrencies) {
@@ -64,11 +64,11 @@ export default async function countryModal({
 	return (
 		<Modal>
 			<div className="flex items-center absolute top-10 text-black">
-				<h1 className="text-2xl font-bold">{country.name.official}</h1>
+				<h1 className="text-2xl font-bold px-4">{country.name.official}</h1>
 			</div>
-			<div className="flex flex-row absolute top-24 ml-6 h-1/3 w-full">
+			<div className="flex-1 absolute m-auto top-28 h-1/3">
 				<img src={country.flags.png} alt={country.name.official} className="rounded-md shadow-lg border-4 border-neutral-200 w-[310px]" />
-				<div className="flex flex-col px-4 w-full text-black">
+				<div className="flex flex-col items-center w-full text-black">
 					<p className="font-bold text-lg">Capital: <span className="font-normal">{capital}</span></p>
 					<p className="font-bold text-lg">Languages: <span className="font-normal">{languages.join(", ")}</span></p>
 					<p className="font-bold text-lg">Population: <span className="font-normal">{country.population.toLocaleString()}</span></p>
