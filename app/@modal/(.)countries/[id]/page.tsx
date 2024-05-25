@@ -66,7 +66,7 @@ export default async function countryModal({
 			<div className="flex items-center absolute top-10 text-black">
 				<h1 className="text-2xl font-bold px-4">{country.name.official}</h1>
 			</div>
-			<div className="flex flex-col items-center align-middle justify-center flex gap-4">
+			<div className="flex flex-col items-center align-middle justify-center flex">
 				<img src={country.flags.png} alt={country.name.official} className="rounded-md shadow-lg border-4 border-neutral-200 w-[310px]"/>
 				<div className="flex flex-col items-center w-full text-black p-5 text-center">
 					<p className="font-bold text-lg">Capital: <span className="font-normal">{capital}</span></p>

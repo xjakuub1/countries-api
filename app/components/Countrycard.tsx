@@ -18,9 +18,7 @@ async function CountryCard(props: { name: string }) {
 					alt={props.name}
 					className="w-[80px] h-[60px] border-2 rounded-md border-black"
 				/>
-				<p className="text-md font-bold text-black">
-					{country.name.common}
-				</p>
+				<p className="text-md font-bold text-black">{country.name.common}</p>
 			</Link>
 		</div>
 	);
