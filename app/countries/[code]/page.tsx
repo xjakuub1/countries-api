@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 interface Neighbor {
   parent: string;
@@ -20,7 +21,7 @@ export default async function countryPage( { params }: { params: { code: string 
     neighbors.push({ parent: params.code, cca2: "None" });
   }
 
-  let currencies = [];
+    let currencies = [];
 	let capitals = [];
 	let languages = [];
 	let region = "";
@@ -68,9 +69,12 @@ export default async function countryPage( { params }: { params: { code: string 
 
   return (
     <>
-      <div className="flex items-center justify-center my-6">
-          <h1 className="text-4xl font-bold px-4">{country.name.official}</h1>
-        </div>
+    	<div className="flex items-center justify-center my-6">
+        	<h1 className="text-4xl font-bold px-4">{country.name.official}</h1>
+			<Link href="/" className="absolute left-4 cursor-pointer text-black">
+				<IoMdArrowRoundBack size={30} />
+			</Link>
+      	</div>
         <div className="flex flex-col items-center align-middle justify-center flex">
           <img src={country.flags.svg} alt={country.name.official} width={460} className="rounded-md shadow-lg border-4 border-neutral-200"/>
           <div className="flex flex-col items-center w-full text-black p-5 text-center font-bold text-2xl">
@@ -87,7 +91,7 @@ export default async function countryPage( { params }: { params: { code: string 
 						return <p key={index}>None</p>;
 					} else {
 						return (	
-							<Link key={index} rel="prefetch" as={`/countries/${neighbor.cca2}`} href={`/countries/${neighbor.cca2}`}>
+							<Link key={index} as={`/countries/${neighbor.cca2}`} href={`/countries/${neighbor.cca2}`}>
 								<p className="font-normal pl-1">{neighbor.cca2.toUpperCase()}<span>{!isLast && ', '}</span></p>
 							</Link>
 						);

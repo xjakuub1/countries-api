@@ -1,9 +1,7 @@
 import Link from "next/link";
 
 async function CountryCard(props: { name: string }) {
-	const res = await fetch(
-		`https://restcountries.com/v3.1/alpha/?codes=${props.name}`
-	);
+	const res = await fetch(`https://restcountries.com/v3.1/alpha/?codes=${props.name}`);
 	const country = (await res.json())[0];
 
 	return (
