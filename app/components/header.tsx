@@ -7,8 +7,8 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 
 const links = [
-    { href: "https://github.com/xjakuub1", name: "Github", icon: <FaGithub size={35}/> },
-    { href: "https://www.linkedin.com/in/jakub-majt%C3%A1n-ba9117311/", name: "LinkedIn", icon: <FaLinkedin size={35}/> },
+  { href: "https://github.com/xjakuub1", name: "Github", icon: <FaGithub size={35} /> },
+  { href: "https://www.linkedin.com/in/jakub-majt%C3%A1n-ba9117311/", name: "LinkedIn", icon: <FaLinkedin size={35} /> },
 ]
 
 export default function Header() {
@@ -24,20 +24,20 @@ export default function Header() {
           />
         </span>
         <h1 className='text-black font-bold text-xl'>
-            World Countries Search
+          World Countries Search
         </h1>
         <ul className='absolute right-3 items-center'>
           <li className='flex gap-x-3 pr-5'>
             {links.map((link) => {
-                return (
-                    <Link
-                        key={link.name}
-                        href={link.href}
-                        className='rounded-full'
-                    >
-                    <p className="px-2">{link.icon}</p>
-                    </Link>
-                );
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className='rounded-full'
+                >
+                  <p className="px-2">{link.icon}</p>
+                </Link>
+              );
             })}
           </li>
         </ul>

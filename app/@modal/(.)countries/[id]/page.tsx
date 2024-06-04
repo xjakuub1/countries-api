@@ -5,9 +5,8 @@ export default async function countryModal({
 }: {
 	params: { id: number };
 }) {
-	const res = await fetch(
-		`https://restcountries.com/v3.1/alpha/?codes=${countryId}`
-	);
+
+	const res = await fetch(`https://restcountries.com/v3.1/alpha/?codes=${countryId}`);
 	const country = (await res.json())[0];
 
 	let currencies = [];
@@ -17,9 +16,9 @@ export default async function countryModal({
 	let borders = "";
 	let subregion = "";
 
-	const hasCurrencies =country.currencies && Object.keys(country.currencies).length > 0;
+	const hasCurrencies = country.currencies && Object.keys(country.currencies).length > 0;
 	const hasCapital = country.capital && country.capital.length > 0;
-	const hasLanguages =country.languages && Object.keys(country.languages).length > 0;
+	const hasLanguages = country.languages && Object.keys(country.languages).length > 0;
 	const hasRegion = country.region && country.region !== "";
 	const hasSubregion = country.subregion && country.subregion !== "";
 	const hasBorders = country.borders && country.borders.length > 0;
@@ -67,7 +66,7 @@ export default async function countryModal({
 				<h1 className="text-2xl font-bold px-4">{country.name.official}</h1>
 			</div>
 			<div className="flex flex-col items-center align-middle justify-center flex">
-				<img src={country.flags.png} alt={country.name.official} className="rounded-md shadow-lg border-4 border-neutral-200 w-[310px]"/>
+				<img src={country.flags.png} alt={country.name.official} className="rounded-md shadow-lg border-4 border-neutral-200 w-[310px]" />
 				<div className="flex flex-col items-center w-full text-black p-5 text-center">
 					<p className="font-bold text-lg">Capital: <span className="font-normal">{capital}</span></p>
 					<p className="font-bold text-lg">Languages:{" "}<span className="font-normal">{languages.join(", ")}</span></p>
