@@ -9,15 +9,14 @@ export const metadata: Metadata = {
   description: "Simple, easy-to-use world countries search provided by an Restful API",
 };
 
+export const runtime = "edge";
+
 export default function RootLayout(props: {
   children: React.ReactNode;
   modal: React.ReactNode;
 }) {
   return (
     <html>
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
       <body>
         {props.children}
         {props.modal}
