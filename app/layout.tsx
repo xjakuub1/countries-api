@@ -9,8 +9,6 @@ export const metadata: Metadata = {
   description: "Simple, easy-to-use world countries search provided by an Restful API",
 };
 
-export const runtime = "edge";
-
 export default function RootLayout(props: {
   children: React.ReactNode;
   modal: React.ReactNode;
