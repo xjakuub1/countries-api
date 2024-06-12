@@ -71,9 +71,6 @@ export default async function countryPage({ params }: { params: { code: string }
 		<>
 			<div className="flex items-center justify-center my-6">
 				<h1 className="text-4xl font-bold px-4">{country.name.official}</h1>
-				<Link href="/" className="absolute left-4 cursor-pointer text-black">
-					<IoMdArrowRoundBack size={30} />
-				</Link>
 			</div>
 			<div className="flex flex-col items-center align-middle justify-center flex">
 				<img src={country.flags.svg} alt={country.name.official} width={460} className="rounded-md shadow-lg border-4 border-neutral-200" />

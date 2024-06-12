@@ -23,9 +23,9 @@ export default function Header() {
             className='rounded-full'
           />
         </span>
-        <h1 className='text-black font-bold text-xl'>
-          World Countries Search
-        </h1>
+        <Link href={'/'}>
+          <h1 className='text-black font-bold text-xl'>World Countries Search</h1>
+        </Link>
         <ul className='absolute right-3 items-center'>
           <li className='flex gap-x-3 pr-5'>
             {links.map((link) => {
