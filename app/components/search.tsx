@@ -5,7 +5,7 @@ import {
 	CommandItem,
 	CommandList,
 } from "@/components/ui/command";
-import CountryCard from "./Countrycard";
+import CountryCard from "./CountryCard";
 
 export function ShadSearch(props: { nameArr: Array<string> }) {
 	return (

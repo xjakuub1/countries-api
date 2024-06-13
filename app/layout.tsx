@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import QueryClientProvider from "@/components/QueryClientProvider";
 
 export const metadata: Metadata = {
   title: "Country Search",
@@ -13,9 +14,11 @@ export default function RootLayout(props: {
   return (
     <html>
       <body>
-        {props.children}
-        {props.modal}
-        <div id="modal-root" />
+        <QueryClientProvider>
+          {props.children}
+          {props.modal}
+          <div id="modal-root" />
+        </QueryClientProvider>
       </body>
     </html>
   );
